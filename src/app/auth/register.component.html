@@ -1,0 +1,40 @@
+<!-- Formulario de registro -->
+<div class="register-form">
+  <h2>Registro</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div class="form-group">
+      <label>Nombre de usuario:</label>
+      <input formControlName="username" type="text" class="form-control">
+      <div *ngIf="registerForm.get('username').invalid && (registerForm.get('username').dirty || registerForm.get('username').touched)" class="invalid-feedback">
+        <div *ngIf="registerForm.get('username').errors.required">El nombre de usuario es obligatorio.</div>
+        <div *ngIf="registerForm.get('username').errors.minlength">El nombre de usuario debe tener al menos 4 caracteres.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Correo electrónico:</label>
+      <input formControlName="email" type="email" class="form-control">
+      <div *ngIf="registerForm.get('email').invalid && (registerForm.get('email').dirty || registerForm.get('email').touched)" class="invalid-feedback">
+        <div *ngIf="registerForm.get('email').errors.required">El correo electrónico es obligatorio.</div>
+        <div *ngIf="registerForm.get('email').errors.email">El correo electrónico no es válido.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Contraseña:</label>
+      <input formControlName="password" type="password" class="form-control">
+      <div *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)" class="invalid-feedback">
+        <div *ngIf="registerForm.get('password').errors.required">La contraseña es obligatoria.</div>
+        <div *ngIf="registerForm.get('password').errors.minlength">La contraseña debe tener al menos 8 caracteres.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Confirmar contraseña:</label>
+      <input formControlName="confirmPassword" type="password" class="form-control">
+      <div *ngIf="registerForm.get('confirmPassword').invalid && (registerForm.get('confirmPassword').dirty || registerForm.get('confirmPassword').touched)" class="invalid-feedback">
+        <div *ngIf="registerForm.get('confirmPassword').errors.required">La confirmación de la contraseña es obligatoria.</div>
+        <div *ngIf="registerForm.get('confirmPassword').errors.minlength">La confirmación de la contraseña debe tener al menos 8 caracteres.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+  </form>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+</div>

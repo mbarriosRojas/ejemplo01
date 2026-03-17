@@ -2,19 +2,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-// Servicio de autenticación
+// Servicio de usuarios
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private apiUrl = 'https://api.example.com/auth';
+export class UserService {
+  private apiUrl = 'https://api.example.com/users';
 
   constructor(private http: HttpClient) { }
-
-  // Método de login
-  login(username: string, password: string): any {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
-  }
 
   // Método de registro
   register(registerData: any): any {
