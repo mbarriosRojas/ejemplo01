@@ -1,0 +1,42 @@
+{
+  "compileOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "out-tsc",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "inlineSourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "lib": [
+      "es2020"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictMetadataEmit": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "whitespace": true,
+    "extendedDiagnostics": true
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}
